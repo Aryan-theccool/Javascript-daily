@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h3{
+      text-transform: capitalize;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+    }
+    #main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: #222;
+    }
+    h1{
+      color: #555;
+      font-size: 10rem;
+      font-weight: 300;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <p>hiiiiiiiiiiii</p>
+  <input type="text" placeholder="name"> -->
+  <div id="main">
+    <h1>A</h1>
+
+  </div>
+
+  <h3>Select your device</h3>
+
+  <select id="device">
+    <option selected disabled>Choose your device</option>
+    <option value="samsung">Samsung</option>
+    <option value="apple">Apple</option>
+    <option value="oneplus">OnePlus</option>
+    <option value="mi">Mi</option>
+  </select>
+
+  <script src="changevent.js"></script>
+
+</body>
+</html>
