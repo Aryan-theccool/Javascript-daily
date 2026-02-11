@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TrustForge – Chain of Trust</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #fff;
+  }
+
+  .wrapper {
+    position: relative;
+    padding: 80px 40px;
+    overflow-x: auto;
+  }
+
+  .cards {
+    display: flex;
+    gap: 80px;
+    position: relative;
+    z-index: 2;
+    padding: 40px 0;
+  }
+
+  .card {
+    width: 220px;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    border: 1px solid #e5e7eb;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="wrapper" id="wrapper">
+  <svg id="connections"></svg>
+
+  <div class="cards" id="cards">
+    <div class="card">Organization Data</div>
+    <div class="card">Encryption</div>
+    <div class="card">Hashing</div>
+    <div class="card">Blockchain</div>
+    <div class="card">Secure Exchange</div>
+    <div class="card">Verification</div>
+    <div class="card">Audit</div>
+  </div>
+</div>
+
+<script>
+  const wrapper = document.getElementById("wrapper");
+  const cards = document.querySelectorAll(".card");
+  const svg = document.getElementById("connections");
+
+  function drawConnections() {
+    svg.innerHTML = "";
+
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const lastCard = cards[cards.length - 1].getBoundingClientRect();
+
+    svg.setAttribute("width", lastCard.right - wrapperRect.left + 40);
+    svg.setAttribute("height", wrapper.offsetHeight);
+
+    for (let i = 0; i < cards.length - 1; i++) {
+      const a = cards[i].getBoundingClientRect();
+      const b = cards[i + 1].getBoundingClientRect();
+
+      const x1 = a.right - wrapperRect.left;
+      const y1 = a.top + a.height / 2 - wrapperRect.top;
+
+      const x2 = b.left - wrapperRect.left;
+      const y2 = b.top + b.height / 2 - wrapperRect.top;
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute(
+        "d",
+        `M ${x1} ${y1} C ${x1 + 60} ${y1}, ${x2 - 60} ${y2}, ${x2} ${y2}`
+      );
+      path.setAttribute("stroke", "#4f46e5");
+      path.setAttribute("stroke-width", "6");
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke-linecap", "round");
+
+      svg.appendChild(path);
+    }
+  }
+
+  drawConnections();
+  window.addEventListener("resize", drawConnections);
+</script>
+
+</body>
+</html>
