@@ -16,15 +16,14 @@
       height: 100%;
     }
     #main{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 50px;
+    
       width: 100%;
       height: 100%;
       background-color: #222;
     }
     input{
-      display: none;
+      display: block;
     }
     #btn{
       padding: 12px 22px;
@@ -38,10 +37,65 @@
       background-color: #000;
       color: #fff;
     }
+    .card{
+      max-width: 300px;
+      margin-top: 40px;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid pink ;
+      display: inline-block;
+    }
+    .profile{
+      width: 50px;
+      height: 50px;
+      background-color: #b6653c;
+      border-radius: 50%;
+      margin-bottom: 7px;
+      overflow: hidden;
+    }
+      .profile img{
+      width:100% ;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card p{
+      font: 12px;
+      margin-top: 10px;
+    }
+    .card h5{
+      margin-top: 5px;
+    }
+  
   </style>
 </head>
 
-<body>
+<body><div id="main">
+
+    <form action="">
+          <input type="text" placeholder="profile pic">
+    <input type="text" 
+    placeholder="name">
+        <input type="text" placeholder="occupation">
+        <input type="text" placeholder="info">
+
+    <input type="submit" >
+
+
+  </form>
+  
+  <!-- <div class="card">
+  <div class="profile">
+    <img src="https://images.unsplash.com/photo-1770296877116-c4973c84d339?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8" alt="Profile picture">
+  </div>
+  <div class="info">
+    <h5>John Doe</h5>
+    <p>Software Engineer</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, minima ullam rerum, ea ipsum quidem odio minus ex maiores voluptatem facere dolores quas dolor quaerat aliquid rem corrupti dolorum molestias?</p>
+  </div>
+</div> -->
+</div>
+
+
 <!-- 
    <p>hiiiiiiiiiiii</p>
   <input type="text" placeholder="name"> -->
@@ -63,7 +117,7 @@
   <!-- <script src="changevent.js"></script> -->
   <!-- <script src="typeonscreenkeyB.js"></script> -->
   <!-- <script src="choosefile.js"></script> -->
-
+<script src="submit.js"></script>
 
 </body>
 </html>
