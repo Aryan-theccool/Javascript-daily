@@ -45,9 +45,9 @@ console.log(card);
 
 main.appendChild(card);
 input.forEach(function(inp){
-  if(inp.type!=='sumbit'){
+  if(inp.type!="submit"){
   inp.value = "";
   }
 
-})
+});
 });
