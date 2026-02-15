@@ -1,7 +1,8 @@
 let form = document.querySelector("form");
 let input = document.querySelectorAll("input");
 let main =document.querySelector("#main");
-form.addEventListener("submit",function(event){
+if(form) {
+  form.addEventListener("submit",function(event){
   event.preventDefault();
 
   // console.log(input[0].value,
@@ -50,4 +51,5 @@ input.forEach(function(inp){
   }
 
 });
-});
+  });
+}
