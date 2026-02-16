@@ -96,18 +96,71 @@ border: none;
 font-weight: 600;
 font-size: 20px;
  }
+ 
+ #a{
+    width: 300px;
+    height: 300px;
+    background-color: #8B4513;
+    padding: 40px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ #b{
+    width: 200px;
+    height: 200px;
+    background-color: #2F4F2F;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ #c{
+    width: 100px;
+    height: 100px;
+    background-color: #A0522D;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+ }
+ 
+ #d{
+    padding: 8px 16px;
+    background-color: #808080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+ }
+ 
+ #d:hover{
+    background-color: #606060;
+ }
+
   </style>
 </head>
 
  <body>
   
-  <ul>
+  <div id="a">
+    <div id="b">
+      <div id="c">
+        <button id="d">click me</button>
+      </div>
+    </div>
+  </div>
+  <!-- <ul>
     <li>apple</li>
     <li>mango</li>
     <li>strawberry</li>
     <li>pineapple</li>
   </ul>
-  
+   -->
   <!--<div id="main">
   <div id="nav">
     <a href="">home</a>

@@ -1,0 +1,18 @@
+When you click or raise any event, your event flow works in three phases (not two):
+
+Phase 1: Capturing Phase
+Event starts from the top-level element (window) and moves downward to the target element
+This is the first phase that occurs
+Phase 2: Target Phase
+Event reaches the actual target element that was clicked/triggered
+The event is handled on the target element itself
+Phase 3: Bubbling Phase
+Event starts from the target element and moves upward through the parent hierarchy
+This is what your eventbubbling.js code demonstrates
+Important Notes:
+By default, event listeners work in the bubbling phase (Phase 3)
+To capture events in the capturing phase (Phase 1), you need to set the third parameter to true:
+
+//event capturing
+hamesha phase 1 chaltab hai matlb parent se target pe jata per wo by default band rehta hai toh usse on karna rehta hai agar humne use on kiya tohhhhhhhhhhhhh hi phase 1 wala ans milega
+//CAPTURE PHASE ON KARO
