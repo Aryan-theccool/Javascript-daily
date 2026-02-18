@@ -5,7 +5,11 @@
 //update - setItem is kardeta hai 
 
 
-localStorage.setItem("name","ayush");
-let a=localStorage.getItem("name");
-console.log(a);
-localStorage.removeItem("name");
+// localStorage.setItem("name","ayush");
+// let a=localStorage.getItem("name");
+// console.log(a);
+// localStorage.removeItem("name");
+localStorage.setItem("dost",JSON.stringify(["ayush","rohit","rohit"]));
+let b=localStorage.getItem("dost");
+console.log(b);
+JSON.parse(b);
