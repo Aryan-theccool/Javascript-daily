@@ -9,7 +9,8 @@
 // let a=localStorage.getItem("name");
 // console.log(a);
 // localStorage.removeItem("name");
-localStorage.setItem("dost",JSON.stringify(["ayush","rohit","rohit"]));
-let b=localStorage.getItem("dost");
-console.log(b);
-JSON.parse(b);
+// localStorage.setItem("dost",JSON.stringify(["ayush","rohit","rohit"]));
+// let b=localStorage.getItem("dost");
+// console.log(b);
+// JSON.parse(b);
+console.log(whindow.matchMedia('(prefers-color-scheme: dark)').matches);
