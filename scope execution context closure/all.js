@@ -57,6 +57,76 @@ save2();
 save2();
 
 save2();
+// encapsulation with closure
+function clicklimiter(){
+  let click =0;
+  return function(){
+    if(click<5){
+    click++;
+console.log(`clicked :${click} times`)
+    }else{
+      console.error("limit exceed ")
+    }
+  }
+}
+let fuun=clicklimiter();
+fuun();
+fuun()
+
+fuun()
+
+fuun()
+fuun()
+fuun()
+
+// // toaster
+
+// function showToast(message, type = 'info', duration = 3000) {
+//   const toastContainer = document.getElementById('toast-container');
+  
+//   const toast = document.createElement('div');
+  
+//   const bgColor = {
+//     'success': 'bg-green-500',
+//     'error': 'bg-red-500',
+//     'warning': 'bg-yellow-500',
+//     'info': 'bg-blue-500'
+//   }[type] || 'bg-gray-500';
+  
+//   const icon = {
+//     'success': '✓',
+//     'error': '✗',
+//     'warning': '⚠',
+//     'info': 'ℹ'
+//   }[type] || 'ℹ';
+  
+//   toast.className = `${bgColor} text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 transform transition-all duration-300 translate-x-full`;
+//   toast.innerHTML = `
+//     <span class="text-lg">${icon}</span>
+//     <span>${message}</span>
+//   `;
+  
+//   toastContainer.appendChild(toast);
+  
+//   setTimeout(() => {
+//     toast.classList.remove('translate-x-full');
+//     toast.classList.add('translate-x-0');
+//   }, 100);
+  
+//   setTimeout(() => {
+//     toast.classList.add('translate-x-full');
+//     setTimeout(() => {
+//       toastContainer.removeChild(toast);
+//     }, 300);
+//   }, duration);
+// }
+
+// // Example usage:
+// showToast('Success message!', 'success');
+// showToast('Error occurred!', 'error');
+// showToast('Warning!', 'warning');
+// showToast('Info message', 'info');
+
 
 
 
