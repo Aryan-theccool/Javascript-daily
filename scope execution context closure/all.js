@@ -20,3 +20,43 @@ function defg(){
   abcd();
 }
 defg();
+//closure hote hai fun jo ki kisi parent fun ke ander ho aur ander wala fun return ho raha ho, and returening fun use kare parent fun ka koi variable
+
+function abcd(){
+  let a=12;
+  return function(){
+    console.log(a);
+  }
+}
+let fun=abcd();
+fun();
+
+//fayde nuksan par 
+//private variable 
+//globalpollutionbn 
+
+//private counter 
+function countforme(){
+  let c=0;
+  return function(){
+    c++;
+    console.log(c);
+  }
+}
+let save=countforme();
+save();
+save();
+
+save();
+
+save();
+let save2 = countforme();
+save2();
+save2();
+
+save2();
+
+save2();
+
+
+
