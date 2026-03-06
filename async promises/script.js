@@ -61,14 +61,25 @@ let pr =new Promise((resolve,reject)=>{
   },4000)
 })
 
-async function abcd(){
-  try{
- let val= await pr()
- console.log(val);
+// async function abcd(){
+//   try{
+//  let val= await pr()
+//  console.log(val);
  
+//   }
+//   catch(err){
+//     console.log(err);
+//   }
+// }
+// abcd()
+
+async function xyz(){
+  try{
+    let val = await pr;
+    console.log(val);
   }
   catch(err){
     console.log(err);
   }
 }
-abcd()
+xyz()
