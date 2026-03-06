@@ -29,6 +29,26 @@
 //ap ek promise banate ho jo 
 
 
+// let pr =new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     // resolve(345)
+//     if(3>5){
+//       resolve(345)
+//     }
+//     else{
+//       reject("error")
+//     }
+//   },4000)
+// })
+// pr.then(function(data){
+//   console.log(data);
+// })
+// .catch(function(err){
+//   console.log(err);
+// })
+
+// Async Await
+
 let pr =new Promise((resolve,reject)=>{
   setTimeout(()=>{
     // resolve(345)
@@ -40,9 +60,15 @@ let pr =new Promise((resolve,reject)=>{
     }
   },4000)
 })
-pr.then(function(data){
-  console.log(data);
-})
-.catch(function(err){
-  console.log(err);
-})
+
+async function abcd(){
+  try{
+ let val= await pr()
+ console.log(val);
+ 
+  }
+  catch(err){
+    console.log(err);
+  }
+}
+abcd()
