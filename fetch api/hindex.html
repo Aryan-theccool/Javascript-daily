@@ -1,4 +1,49 @@
 <!DOCTYPE html>
+<div class="flex items-center justify-center min-h-screen">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-gray-800 dark:text-white">
+    <img id="avatar" class="h-32 w-32 rounded-full mx-auto cursor-pointer" src="https://picsum.photos/200" alt="Avatar">
+    <h2 id="name" class="text-2xl font-bold mt-4 text-center cursor-pointer">John Doe</h2>
+    <p id="role" class="text-gray-600 dark:text-gray-400 text-center cursor-pointer">Web Developer</p>
+    <div class="flex justify-center items-center mt-4">
+      <button id="twitter" class="text-blue-500 hover:bg-blue-200 hover:text-blue-800 font-bold py-2 px-4 rounded mr-2">
+        Twitter
+      </button>
+      <button id="github" class="text-teal-500 hover:bg-teal-200 hover:text-teal-800 font-bold py-2 px-4 rounded">
+        GitHub
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const avatar = document.getElementById('avatar');
+  const name = document.getElementById('name');
+  const role = document.getElementById('role');
+  const twitter = document.getElementById('twitter');
+  const github = document.getElementById('github');
+
+  avatar.addEventListener('click', () => {
+    const randomNumber = Math.floor(Math.random() * 1000);
+    avatar.src = `https://picsum.photos/200?random=${randomNumber}`;
+  });
+
+  name.addEventListener('click', () => {
+    name.textContent = 'John Smith';
+  });
+
+  role.addEventListener('click', () => {
+    role.textContent = 'UI/UX Designer';
+  });
+
+  twitter.addEventListener('click', () => {
+    window.open('https://twitter.com/', '_blank');
+  });
+
+  github.addEventListener('click', () => {
+    window.open('https://github.com/', '_blank');
+  });
+</script>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,4 +54,4 @@
   
 </body>
 <script src="script.js"></script>
-</html></html>
+</html>
