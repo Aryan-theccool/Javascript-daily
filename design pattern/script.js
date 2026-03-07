@@ -75,36 +75,78 @@
 // milta hai jisme apne methods aur (agar chaho to) private data ho sakte
 // hai.
 
-function createProduct(name, price) {
+// function createProduct(name, price) {
 
-  let stock=10;
-    return {
-        name,
-        price,
-        buy(qty){
-            if(qty > stock){
-                console.log("Insufficient stock");
-                return;
-            }
-            stock -= qty;
-            console.log(`${qty} ${this.name} bought`);
-        },
-        refill(qty){
-            stock += qty;
-            console.log(`${qty} ${this.name} refilled`);
-        },
-        display: function() {
-            console.log(`${this.name} - $${this.price}`);
-        },
-        status: function() {
-            console.log(`${this.name} - Stock: ${stock}`);
-        }
-    };
-}
+//   let stock=10;
+//     return {
+//         name,
+//         price,
+//         buy(qty){
+//             if(qty > stock){
+//                 console.log("Insufficient stock");
+//                 return;
+//             }
+//             stock -= qty;
+//             console.log(`${qty} ${this.name} bought`);
+//         },
+//         refill(qty){
+//             stock += qty;
+//             console.log(`${qty} ${this.name} refilled`);
+//         },
+//         display: function() {
+//             console.log(`${this.name} - $${this.price}`);
+//         },
+//         status: function() {
+//             console.log(`${this.name} - Stock: ${stock}`);
+//         }
+//     };
+// }
 
-// Usage
-const product1 = createProduct("Laptop", 999);
-const product2 = createProduct("Phone", 599);
+// // Usage
+// const product1 = createProduct("Laptop", 999);
+// const product2 = createProduct("Phone", 599);
 
 // product1.display(); // Laptop - $999
 // product2.display(); // Phone - $599
+
+// observer pattern 
+
+class YoutubeChannel{
+  constructor(){
+    this.subscribers= [];
+  }
+  subscriber(user){
+this.subscribers.push(user);
+user.update(`${user.name} you have subscribed the channel`);
+  }
+  unsubscribe(user){
+   this.subscribers = this.subscribers.filter(subscriber => subscriber !== user);
+    user.update(`${user.name} you have unsubscribed the channel`);
+  }
+  notify(message){
+    this.subscribers.forEach(subscriber => subscriber.update(message));
+  }
+  
+}
+class user{
+  constructor(name){
+    this.name = name;
+  }
+  update(data){
+    console.log(data);
+  }
+}
+
+const channel = new YoutubeChannel();
+const user1 = new user("John");
+const user2 = new user("Jane");
+const user3 = new user("Bob");
+
+channel.subscriber(user1);
+channel.subscriber(user2);
+channel.subscriber(user3);
+
+channel.unsubscribe(user1);
+
+channel.notify("New video uploaded");
+
