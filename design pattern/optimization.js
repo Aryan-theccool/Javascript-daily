@@ -6,8 +6,12 @@
 function debounce(func, delay) {
     let timeout;
     return function(...args) {
+      console.log("hi");
         clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), delay);
+        timeout = setTimeout(() => {
+          console.log("hi");
+          func.apply(this, args)
+        }, delay);
     };
 }
 
